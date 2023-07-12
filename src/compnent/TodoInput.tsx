@@ -1,7 +1,6 @@
 "use client";
 import {Row, Input, Col, List, Checkbox, Card} from "antd";
 import {motion} from "framer-motion"
-import Unable2chase from "@Component/compnent/Unable2chase";
 import {TodoInputAddButton} from "@Component/compnent/TodoInputAddButton";
 import {useAtom, useSetAtom} from "jotai";
 import {inputAtom} from "@Component/store/inputAtom";
@@ -9,14 +8,11 @@ import {ChangeEventHandler, useCallback, useEffect} from "react";
 import {TodoItem, todoListAtom} from "@Component/store/todoListAtom";
 import {CheckboxChangeEvent} from "antd/es/checkbox";
 import {TodoListTitle} from "@Component/compnent/TodoListTitle";
+import dynamic from "next/dynamic";
 
-interface InputProps {
-    children: string;
-    value: number;
-    set: (newValue: number) => void;
-    min?: number;
-    max?: number;
-}
+const Unable2chase = dynamic(() => import("./Unable2chase"), {
+    ssr: false,
+});
 
 export function TodoInput() {
     const [todoList] = useAtom(todoListAtom)
@@ -26,12 +22,10 @@ export function TodoInput() {
     const handleOnChange: ChangeEventHandler<HTMLInputElement> = useCallback((e) => {
         setInputValue(e.target.value)
     }, [setInputValue])
-    useEffect(() => {
-        console.log(todoList.filter(todoItem => !todoItem.isDone).length)
-    }, [todoList])
+
     return (
         <>
-            <TodoListTitle style={{marginTop:'33%',paddingRight:423}}/>
+            <TodoListTitle style={{marginTop: '33%', paddingRight: 423}}/>
             <Unable2chase chasable={isTodoAllDone} target={<TodoInputAddButton isTodoAllDone={isTodoAllDone}/>}>
 
                 <Row gutter={[4, 4]} style={{width: 400}}>

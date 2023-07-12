@@ -1,10 +1,7 @@
 "use client";
 import {motion} from "framer-motion"
-import {Inter} from 'next/font/google'
 import {ReactNode, useCallback, useEffect, useRef, useState} from "react";
 import {Col, Row} from "antd";
-
-const inter = Inter({subsets: ['latin']})
 
 export default function Unable2chase({chasable, target, children}: {
     chasable?: boolean,
@@ -60,7 +57,7 @@ export default function Unable2chase({chasable, target, children}: {
             justifyContent: "center",
             position: "fixed",
         }}>
-            <Row gutter={[2, 2]} style={{paddingTop:"35%"}}>
+            <Row gutter={[2, 2]} style={{paddingTop: "35%"}}>
                 <Col>
                     {children}
                 </Col>

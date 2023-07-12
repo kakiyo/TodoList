@@ -1,3 +1,4 @@
+"use client";
 import {Button} from "antd";
 import {useAtom} from "jotai";
 import {todoListAtom} from "@Component/store/todoListAtom";

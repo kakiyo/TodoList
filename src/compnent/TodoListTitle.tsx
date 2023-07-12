@@ -1,3 +1,4 @@
+"use client";
 import {motion, MotionStyle} from "framer-motion";
 
 export const TodoListTitle = ({style}:{style?:MotionStyle}) => {

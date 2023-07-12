@@ -4,8 +4,6 @@ import styles from './page.module.css'
 import {TodoInput} from "@Component/compnent/TodoInput";
 import {ConfigProvider} from "antd";
 
-const inter = Inter({subsets: ['latin']})
-
 export default function Home() {
     return (
         <ConfigProvider
