@@ -3,8 +3,10 @@ import Image from "next/image";
 import {useEffect, useState} from "react";
 
 export default function Home() {
-    const [data, setData] = useState(null);
+    const [data, setData] = useState();
     useEffect(() => {
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-expect-error
         fetch("/api/hello").then((res) => setData(res)).catch((err) => console.log(err));
     }, []);
     if (!data){
