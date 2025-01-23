@@ -1,11 +1,11 @@
+"use client"
 import Image from "next/image";
 import {useEffect, useState} from "react";
 
 export default function Home() {
     const [data, setData] = useState(null);
     useEffect(() => {
-        fetch("/api/hello").then((res) => setData(res));
-        
+        fetch("/api/hello").then((res) => setData(res)).catch((err) => console.log(err));
     }, []);
     if (!data){
         return <div>Loading...</div>
