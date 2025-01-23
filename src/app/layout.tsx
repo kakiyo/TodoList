@@ -1,5 +1,4 @@
 import './globals.css'
-import Head from "next/head";
 
 export const metadata = {
   title: 'Create Next App',
@@ -13,9 +12,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-          <Head>
-      <title></title>
-      <div dangerouslySetInnerHTML={{
+      <body>
+         <div dangerouslySetInnerHTML={{
         __html: '<script async src="https://www.googletagmanager.com/gtag/js?id=G-138CGPC6W5"></script>\n' +
             '                <script>\n' +
             '                    window.dataLayer = window.dataLayer || [];\n' +
@@ -32,10 +30,6 @@ export default function RootLayout({
             '\'https://www.googletagmanager.com/gtm.js?id=\'+i+dl;f.parentNode.insertBefore(j,f);\n' +
             '})(window,document,\'script\',\'dataLayer\',\'GTM-KTCDXWG\');</script>'
       }}/>
-
-      <link rel="icon" href="/favicon.ico" />
-    </Head>
-      <body>
          <div dangerouslySetInnerHTML={{
         __html: `<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KTCDXWG"
                 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>`
