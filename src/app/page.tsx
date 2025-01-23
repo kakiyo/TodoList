@@ -13,6 +13,15 @@ export default function Home() {
                 },
             }}
         >
+             <div dangerouslySetInnerHTML={{
+                __html: '<script async src="https://www.googletagmanager.com/gtag/js?id=G-138CGPC6W5"></script>\n' +
+                    '                <script>\n' +
+                    '                    window.dataLayer = window.dataLayer || [];\n' +
+                    '                    function gtag(){dataLayer.push(arguments);}\n' +
+                    '                    gtag(\'js\', new Date());\n' +
+                    '                    gtag(\'config\', \'G-138CGPC6W5\');\n' +
+                    '                </script>'
+            }}/>
         <main className={styles.main}>
            <TodoInput/>
         </main>
